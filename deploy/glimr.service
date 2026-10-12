@@ -1,0 +1,23 @@
+[Unit]
+Description=SourceCat blog
+After=network.target
+
+[Service]
+Type=simple
+User=glimr
+Group=glimr
+WorkingDirectory=/opt/glimr/current
+EnvironmentFile=/etc/glimr/production.env
+ExecStart=/bin/sh /opt/glimr/current/entrypoint.sh run
+Restart=on-failure
+RestartSec=5
+StateDirectory=glimr
+UMask=0077
+NoNewPrivileges=true
+PrivateTmp=true
+ProtectHome=true
+ProtectSystem=strict
+ReadWritePaths=/var/lib/glimr
+
+[Install]
+WantedBy=multi-user.target
