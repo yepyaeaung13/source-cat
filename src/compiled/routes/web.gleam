@@ -10,6 +10,7 @@
 
 import app/http/controllers/admin_controller
 import app/http/controllers/community_controller
+import app/http/controllers/health_controller
 import app/http/controllers/welcome_controller
 import gleam/http.{Get, Post}
 import glimr/http/response
@@ -110,6 +111,12 @@ pub fn routes(path, method, ctx) {
       case method {
         Post -> community_controller.signup(ctx)
         _ -> response.method_not_allowed([Post])
+      }
+
+    ["healthz"] ->
+      case method {
+        Get -> health_controller.show(ctx)
+        _ -> response.method_not_allowed([Get])
       }
 
     ["admin", "delete", id] ->

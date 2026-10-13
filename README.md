@@ -1,6 +1,13 @@
-# Glimr App
+# SourceCat
 
 A Gleam web application created from the [official Glimr template](https://github.com/glimr-org/glimr).
+
+## Deploy
+
+For Fly.io, follow [deploy/FLY.md](deploy/FLY.md). The included Dockerfile builds
+an Erlang shipment and frontend assets. SQLite and file cache live on a Fly
+volume; run one Machine in Singapore. The previous VPS/Caddy instructions
+remain available in [deploy/README.md](deploy/README.md).
 
 ## Development
 

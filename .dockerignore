@@ -1,0 +1,27 @@
+.git
+.github
+.env*
+node_modules
+build
+docs
+test
+scripts
+**/*.db
+**/*.db-wal
+**/*.db-shm
+**/*.sqlite
+**/*.sqlite-wal
+**/*.sqlite-shm
+**/*.sqlite3
+**/*.sqlite3-wal
+**/*.sqlite3-shm
+erl_crash.dump
+# Keep generated Gleam modules: the first compiler pass needs their imports
+# before Glimr regenerates routes, templates and database code.
+priv/storage
+priv/static/hot
+priv/static/assets
+priv/static/.vite
+deploy/*.env
+deploy/*.env.*
+!deploy/production.env.example

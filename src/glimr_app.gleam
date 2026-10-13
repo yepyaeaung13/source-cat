@@ -91,6 +91,7 @@ pub fn main() -> Nil {
   let assert Ok(_) =
     glimr_mist.handler(init, config.get_string("app.key"))
     |> mist.new()
+    |> mist.bind(config.get_string("app.bind"))
     |> mist.port(config.listen_port())
     |> mist.start()
 

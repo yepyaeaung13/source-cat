@@ -9,10 +9,13 @@
 # variables with a default value.
 
 # The application name, used in responses and error pages.
-name = "${APP_NAME:-Glimr}"
+name = "${APP_NAME:-SourceCat}"
 
 # The network port the web server listens on.
 port = "${APP_PORT:-8000}"
+
+# Keep local/VPS traffic private; containers set APP_BIND=0.0.0.0.
+bind = "${APP_BIND:-127.0.0.1}"
 
 # The secret key for encrypting sessions and signing tokens.
 # This MUST be set in your .env file — the app will crash
